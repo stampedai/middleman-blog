@@ -84,7 +84,8 @@ module Middleman
       if options.prefix
         options.prefix = "/#{options.prefix}" unless options.prefix.start_with? '/'
         options.permalink = File.join(options.prefix, options.permalink)
-        options.sources = File.join(options.prefix, options.sources)
+        # NOTE: Do not prefix sources folder when we use an translated blog
+        # options.sources = File.join(options.prefix, options.sources)
         options.taglink = File.join(options.prefix, options.taglink)
         options.year_link = File.join(options.prefix, options.year_link)
         options.month_link = File.join(options.prefix, options.month_link)
